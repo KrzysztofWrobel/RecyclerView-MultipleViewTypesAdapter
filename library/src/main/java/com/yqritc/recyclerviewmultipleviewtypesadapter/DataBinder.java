@@ -57,4 +57,6 @@ abstract public class DataBinder<T extends RecyclerView.ViewHolder> {
     public final void notifyBinderItemRangeRemoved(int positionStart, int itemCount) {
         mDataBindAdapter.notifyBinderItemRangeRemoved(this, positionStart, itemCount);
     }
+
+
 }
