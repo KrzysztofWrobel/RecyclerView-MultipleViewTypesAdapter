@@ -37,7 +37,7 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
         for (int i = 0; i < getItemCount(); i++) {
             if (targetViewType == getEnumFromPosition(i)) {
                 binderPosition--;
-                if (binderPosition <= 0) {
+                if (binderPosition < 0) {
                     return i;
                 }
             }
@@ -105,13 +105,5 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
 
     public void putBinder(E e, DataBinder binder) {
         mBinderMap.put(e, binder);
-    }
-
-    public void removeBinder(E e) {
-        mBinderMap.remove(e);
-    }
-
-    public void clearBinderMap() {
-        mBinderMap.clear();
     }
 }
